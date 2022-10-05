@@ -1,6 +1,5 @@
 import Footer from '../Footer/footer';
 
-const {} = require('next/dist/shared/lib/router/utils/route-regex');
 const { default: Head } = require('next/head');
 const { default: Navbar } = require('../Navbar/navbar');
 
