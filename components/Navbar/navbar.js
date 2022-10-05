@@ -1,5 +1,5 @@
 const Navbar = (props) => {
   const { paths } = props;
-  return <div>This is the NavBar</div>;
+  return <div>NavBar</div>;
 };
 export default Navbar;

@@ -1,3 +1,5 @@
+import Feature from '../components/Feature/feature';
+import Hero from '../components/Hero/hero';
 import Section from '../components/Layout/section';
 import StorageService from '../services/storageService';
 
@@ -7,10 +9,8 @@ export default function Home() {
   return (
     <Section>
       <div>Home Page</div>
-      <ul>
-        <li>Hero Component</li>
-        <li>Features/Advertise component</li>
-      </ul>
+      <Hero />
+      <Feature />
     </Section>
   );
 }
