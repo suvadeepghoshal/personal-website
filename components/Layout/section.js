@@ -1,3 +1,5 @@
+import Head from 'next/head';
+
 const Section = ({ children, title }) => {
   const currentTitle = `${title} - Suvadeep Ghoshal`;
   return (
