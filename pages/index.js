@@ -24,7 +24,6 @@ export default function Home() {
   }, []);
   return (
     <Section>
-      <div>Home Page</div>
       <Hero />
       <Feature />
     </Section>
