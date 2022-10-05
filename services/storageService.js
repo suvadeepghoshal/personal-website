@@ -7,7 +7,7 @@ const StorageService = () => {
 
   const setItem = (key, value, type) => {
     if (isBrowser) {
-      window[storageType(type)].setItem(key, value);
+      window[storageType(type)].setItem(key, JSON.stringify(value));
       return true;
     }
     return false;
