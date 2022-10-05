@@ -15,7 +15,7 @@ const Hero = () => {
             I&apos;m a full stack software enthusiast and algorithm researcher
             based in India!
           </p>
-          <button className="btn btn-primary">Read More</button>
+          <button className="btn btn-outline btn-accent">Read More</button>
         </div>
       </div>
     </div>
