@@ -8,6 +8,9 @@ const Hero = () => {
       <div className="hero-content text-center text-neutral-content">
         <div className="max-w-md">
           <h1 className="mb-5 text-5xl font-bold">Hello There!</h1>
+          <p className="mb-5 shadow rounded-box btn glass pointer-events-none normal-case">
+            Digital Craftsman ( Entrepreneur / Developer / Designer )
+          </p>
           <p className="mb-5">
             I&apos;m a full stack software enthusiast and algorithm researcher
             based in India!
