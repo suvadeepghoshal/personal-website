@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import Section from '../components/Layout/section';
 import StorageService from '../services/storageService';
 
