@@ -1,5 +1,35 @@
+import NextLink from 'next/link';
+import { useEffect, useState } from 'react';
+
+const NavItem = ({ href, children }) => {
+  // const active = path === href;
+  return (
+    <NextLink
+      href={href}
+      passHref
+      scroll={false}
+    >
+      {children}
+    </NextLink>
+  );
+};
+
 const Navbar = (props) => {
-  const { paths } = props;
+  const [navItem, setNavItem] = useState([]);
+  useEffect(() => {
+    fetch('/api/navItem')
+      .then((response) => {
+        if (!response.ok) throw Error(response.status);
+        else return response.json();
+      })
+      .then((data) => {
+        setNavItem(data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
+  const { path } = props;
   return (
     <div className="navbar bg-base-100">
       <div className="navbar-start">
@@ -27,20 +57,30 @@ const Navbar = (props) => {
             tabIndex={0}
             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
           >
-            <li>
-              <a>Homepage</a>
-            </li>
-            <li>
-              <a>Portfolio</a>
-            </li>
-            <li>
-              <a>About</a>
-            </li>
+            {navItem.map((item) => {
+              return (
+                <>
+                  <li key={item.id}>
+                    <NavItem
+                      href={item.href}
+                      path={path}
+                    >
+                      {item.title}
+                    </NavItem>
+                  </li>
+                </>
+              );
+            })}
           </ul>
         </div>
       </div>
       <div className="navbar-center">
-        <a className="btn btn-ghost normal-case text-xl">Suvadeep Ghoshal</a>
+        <NavItem
+          href="/"
+          path={path}
+        >
+          <a className="btn btn-ghost normal-case text-xl">Suvadeep Ghoshal</a>
+        </NavItem>
       </div>
       <div className="navbar-end">
         <button className="btn btn-ghost btn-circle">
