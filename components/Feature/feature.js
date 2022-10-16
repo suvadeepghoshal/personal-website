@@ -1,4 +1,4 @@
-const Feature = () => {
+const Feature = function () {
   return <div>Feature/Advertisement</div>;
 };
 

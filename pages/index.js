@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-import Feature from '../components/Feature/feature';
 import Hero from '../components/Hero/hero';
 import Section from '../components/Layout/section';
 import StorageService from '../services/storageService';
@@ -21,11 +20,10 @@ export default function Home() {
           console.error(error);
         });
     }
-  }, []);
+  }, [getItem, setItem]);
   return (
     <Section>
       <Hero />
-      <Feature />
     </Section>
   );
 }
