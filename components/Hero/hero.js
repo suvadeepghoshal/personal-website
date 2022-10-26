@@ -5,7 +5,6 @@ import Feature from '../Feature/feature';
 const Hero = () => {
   const [readMore, setReadMore] = useState(false);
   const clickActionReadMore = () => {
-    console.log('clicked');
     const { getItem, setItem } = StorageService();
     let existingController = getItem('controller');
     if (existingController === undefined) {
@@ -21,7 +20,6 @@ const Hero = () => {
       else setReadMore(false);
     }
   };
-  console.log(readMore);
   return (
     <>
       <div
