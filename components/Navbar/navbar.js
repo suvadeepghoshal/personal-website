@@ -59,16 +59,14 @@ const Navbar = (props) => {
           >
             {navItem.map((item) => {
               return (
-                <>
-                  <li key={item.id}>
-                    <NavItem
-                      href={item.href}
-                      path={path}
-                    >
-                      {item.title}
-                    </NavItem>
-                  </li>
-                </>
+                <li key={item.key}>
+                  <NavItem
+                    href={item.href}
+                    path={path}
+                  >
+                    {item.title}
+                  </NavItem>
+                </li>
               );
             })}
           </ul>
